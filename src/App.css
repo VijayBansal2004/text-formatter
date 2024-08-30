@@ -1,0 +1,12 @@
+.background-container {
+    background-color: #ffffff0d;
+    padding: 65px 45px;
+    border-radius: 20px;
+    margin-block: 20px;
+}
+
+@media (max-width:380px) {
+    .background-container {
+        padding: 40px 15px;
+    }
+}

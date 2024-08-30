@@ -86,21 +86,23 @@ function App() {
   return (
     <>
       <div className="container min-vh-100 align-content-center">
-        <Heading className="text-center display-5 fw-bolder mb-4 text-decoration-underline" />
-        <TextInput input={input} setinput={setinput} />
-        <div className="countDisplay d-flex gap-3">
-          <p className='mt-2'><b>Length: </b>{input.length}</p>
-          <p className='mt-2'><b>Word Count: </b>{wordCount}</p>
-        </div>
-        <div className="operation-container mt-4 d-flex flex-wrap gap-3 justify-content-center">
-          {buttons.map((button) => (
-            <Operation key={button} value={button} handleOperation={handleOperation} />
-          ))}
+        <div className="background-container">
+          <Heading className="text-center display-5 fw-bolder mb-5 text-decoration-underline" />
+          <TextInput input={input} setinput={setinput} />
+          <div className="countDisplay d-flex gap-3">
+            <p className='mt-2'><b>Length: </b>{input.length}</p>
+            <p className='mt-2'><b>Word Count: </b>{wordCount}</p>
+          </div>
+          <div className="operation-container mt-4 d-flex flex-wrap gap-3 justify-content-center">
+            {buttons.map((button) => (
+              <Operation key={button} value={button} handleOperation={handleOperation} />
+            ))}
 
-          <Operation color="success" value={copyButtonFlag ? "Copied" : "Copy"} className="me-3 text-white" handleOperation={handleOperation} />
-        </div>
+            <Operation color="success" value={copyButtonFlag ? "Copied" : "Copy"} className="me-3 text-white" handleOperation={handleOperation} />
+          </div>
 
-        {output && <Output className="mt-4" output={output} copyText={copyText} copyButtonFlag={copyButtonFlag} />}
+          {output && <Output className="mt-4" output={output} copyText={copyText} copyButtonFlag={copyButtonFlag} />}
+        </div>
       </div>
     </>
   )
